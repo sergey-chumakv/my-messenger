@@ -1,0 +1,16 @@
+@import "./override-mui";
+@import "./colors";
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  background-color: $dark-gray-color;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}

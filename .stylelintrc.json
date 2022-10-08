@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order"
+  ],
+  "fix": true,
+  "defaultSeverity": "error",
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
+  "syntax": "scss",
+  "rules": {
+    "property-no-vendor-prefix": null,
+    "scss/dollar-variable-empty-line-before": "first-nested",
+    "no-descending-specificity": null,
+    "unit-case": null,
+    "selector-class-pattern": null
+  }
+}
