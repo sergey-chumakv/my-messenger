@@ -1,6 +1,8 @@
 import { makeAutoObservable } from 'mobx';
-import { ISignInForm, ISignUpForm, IUserData } from '../api/auth/types';
+
+import { ISignInForm, ISignUpForm } from '../api/auth/types';
 import { AuthApi } from '../api/auth';
+import { IUserData } from '../api/users/types';
 
 class Auth {
   userData: IUserData | null = null;

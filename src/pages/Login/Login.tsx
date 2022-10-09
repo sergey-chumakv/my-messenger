@@ -22,10 +22,6 @@ export const Login = observer(({ auth }: Props) => {
     onSubmit: auth.submitLogin,
   });
 
-  const navigateHandler = () => {
-    navigate('/registration');
-  };
-
   return (
     <div className={styles.page}>
       <form className={styles.form} onSubmit={formik.handleSubmit}>
@@ -38,7 +34,7 @@ export const Login = observer(({ auth }: Props) => {
           className={styles.input}
           value={formik.values.login}
           onChange={formik.handleChange}
-          error={!!formik.errors.login}
+          error={formik.touched.login && !!formik.errors.login}
           errorMessage={formik.errors.login}
           name="login"
           label="Login"
@@ -48,7 +44,7 @@ export const Login = observer(({ auth }: Props) => {
           className={styles.input}
           value={formik.values.password}
           onChange={formik.handleChange}
-          error={!!formik.errors.password}
+          error={formik.touched.password && !!formik.errors.password}
           errorMessage={formik.errors.password}
           name="password"
           type="password"
@@ -56,7 +52,7 @@ export const Login = observer(({ auth }: Props) => {
         />
 
         <Button className={styles.button} type="submit" variant="contained">SIGN IN</Button>
-        <Button className={styles.button} onClick={navigateHandler} color="info" variant="text">
+        <Button className={styles.button} onClick={() => navigate('/registration')} color="info" variant="text">
           CREATE ACCOUNT
         </Button>
       </form>

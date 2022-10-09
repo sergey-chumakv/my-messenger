@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { toast } from 'react-toastify';
-import { IErrorResponse } from '../../api/auth/types';
+import { IErrorResponse } from '../../api/types';
 
 const config: AxiosRequestConfig = {
   baseURL: 'https://ya-praktikum.tech/api/v2',
