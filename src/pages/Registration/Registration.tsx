@@ -108,7 +108,7 @@ export const Registration = observer(({ auth }: Props) => {
 
         <Button className={styles.button} variant="contained" type="submit">SIGN UP</Button>
         <Button className={styles.button} onClick={() => navigate('/login')} color="info" variant="text">
-          I HAVE A PROFILE.
+          I HAVE A PROFILE
         </Button>
       </form>
     </div>

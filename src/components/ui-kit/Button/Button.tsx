@@ -13,6 +13,7 @@ const theme = createTheme({
           borderRadius: '0.5rem',
           fontSize: '1.125rem',
           color: '#fff',
+          textTransform: 'none',
         },
       },
     },

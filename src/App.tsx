@@ -11,6 +11,7 @@ import { FullScreenSpinner } from './components/FullScreenSpinner';
 const Login = React.lazy(() => import('./pages/Login'));
 const Registration = React.lazy(() => import('./pages/Registration'));
 const ChatPage = React.lazy(() => import('./pages/ChatPage'));
+const Profile = React.lazy(() => import('./pages/Profile'));
 
 const App = observer(() => {
   authStore.authenticate();
@@ -52,6 +53,16 @@ const App = observer(() => {
                     </React.Suspense>
                   </RouteGuard>
               )}
+              />
+              <Route
+                path="/profile"
+                element={(
+                  <RouteGuard canActivate={authStore.isAuth} redirect="/login">
+                    <React.Suspense fallback={<FullScreenSpinner />}>
+                      <Profile />
+                    </React.Suspense>
+                  </RouteGuard>
+                )}
               />
             </Routes>
           )
