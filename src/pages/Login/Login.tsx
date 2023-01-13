@@ -2,24 +2,23 @@ import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 import styles from './login.module.scss';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import { Input } from '../../components/ui-kit/Input';
 import { Button } from '../../components/ui-kit/Button';
-import { TAuthStore } from '../../store/auth';
 import { INITIAL_VALUES, VALIDATION_SCHEMA } from './login.constants';
+import '../../utils/i18n';
+import { authStore } from '../../store/auth';
 
-interface Props {
-  auth: TAuthStore;
-}
-
-export const Login = observer(({ auth }: Props) => {
+export const Login = observer(() => {
   const navigate = useNavigate();
+  const [t] = useTranslation();
   const formik = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: VALIDATION_SCHEMA,
-    onSubmit: auth.submitLogin,
+    onSubmit: authStore.submitLogin,
   });
 
   return (
@@ -27,17 +26,17 @@ export const Login = observer(({ auth }: Props) => {
       <form className={styles.form} onSubmit={formik.handleSubmit}>
         <Logo className={styles.logo} />
 
-        <div className={styles.title}> Sign in to messenger</div>
-        <div className={styles.subtitle}>Please enter your login and password.</div>
+        <div className={styles.title}>{t('login.title')}</div>
+        <div className={styles.subtitle}>{t('login.subtitle')}</div>
 
         <Input
           className={styles.input}
           value={formik.values.login}
           onChange={formik.handleChange}
           error={formik.touched.login && !!formik.errors.login}
-          errorMessage={formik.errors.login}
+          errorMessage={t(formik.errors.login || '')}
           name="login"
-          label="Login"
+          label={t('login.login')}
         />
 
         <Input
@@ -45,15 +44,15 @@ export const Login = observer(({ auth }: Props) => {
           value={formik.values.password}
           onChange={formik.handleChange}
           error={formik.touched.password && !!formik.errors.password}
-          errorMessage={formik.errors.password}
+          errorMessage={t(formik.errors.password || '')}
           name="password"
           type="password"
-          label="Password"
+          label={t('login.password')}
         />
 
-        <Button className={styles.button} type="submit" variant="contained">SIGN IN</Button>
-        <Button className={styles.button} onClick={() => navigate('/registration')} color="info" variant="text">
-          CREATE ACCOUNT
+        <Button className={styles.button} type="submit" variant="contained">{t('login.signin')}</Button>
+        <Button className={styles.button} onClick={() => navigate('/registration')} variant="text">
+          {t('login.createAccount')}
         </Button>
       </form>
     </div>

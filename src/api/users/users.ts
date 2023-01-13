@@ -17,8 +17,13 @@ export class UsersApi {
     return http.put<OK>('/user/password', { data });
   }
 
-  static changeUserAvatar(data: FormData) {
-    return http.put<OK>('/user/profile/avatar', { data });
+  static changeUserAvatar(avatar: File) {
+    return http.put<OK>('/user/profile/avatar', { avatar }, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Accept: '*/*',
+      },
+    });
   }
 
   static searchUsers(data: ISearchUser) {

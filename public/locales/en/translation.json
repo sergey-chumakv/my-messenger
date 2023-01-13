@@ -1,0 +1,74 @@
+{
+  "setting": {
+    "profile": "Profile",
+    "language": "Language",
+    "appearance": "Appearance",
+    "security": "Security",
+    "autograph": "Developed by Sergey Chumak"
+  },
+  "profile": {
+    "name": "Name",
+    "phone": "Phone",
+    "login": "Login",
+    "displayName": "Display name",
+    "logout": "CHANGE ACCOUNT"
+  },
+  "language": {
+    "title": "Selected language"
+  },
+  "login": {
+    "title": "Sign in to messenger",
+    "subtitle": "Please enter your login and password.",
+    "login": "Login",
+    "password": "Password",
+    "signin": "SIGN IN",
+    "createAccount": "CREATE ACCOUNT"
+  },
+  "registration": {
+    "title": "Sign up to messenger",
+    "subtitle": "Please fill out the registration form.",
+    "email": "Email",
+    "login": "Login",
+    "name": "Name",
+    "lastName": "Last name",
+    "phone": "Phone",
+    "password": "Password",
+    "passwordRepeat": "Confirm password",
+    "signup": "SIGN UP",
+    "profile": "I HAVE A PROFILE"
+  },
+  "validation": {
+    "email": {
+      "email": "Must be a valid email",
+      "required": "Email is required"
+    },
+    "login": {
+      "matches": "Must start with a letter, only Latin and numbers",
+      "minLength": "Login should be of minimum 3 characters length",
+      "maxLength": "Login should be of maximum 20 characters length",
+      "required": "Login is required"
+    },
+    "name": {
+      "matches": "Must be in Latin or Cyrillic",
+      "required": "Name is required"
+    },
+    "lastName": {
+      "matches": "Must be in Latin or Cyrillic",
+      "required": "Last name is required"
+    },
+    "phone": {
+      "matches": "Must be a valid phone",
+      "required": "Phone is required"
+    },
+    "password": {
+      "matches": "Must contain a capital letter and a number",
+      "minLength": "Password should be of minimum 8 characters length",
+      "maxLength": "Password should be of maximum 40 characters length",
+      "required": "Password is required"
+    },
+    "repeatPassword": {
+      "equals": "Must match password",
+      "required": "Password is required"
+    }
+  }
+}

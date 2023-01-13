@@ -1,6 +1,17 @@
-@import "../../../styles/vars";
+@import "src/styles/vars";
 
 .button {
   width: 100%;
-  height: $rem-size-52px;
+  height: var(--space-52px);
+  padding-right: var(--space-24px);
+  padding-left: var(--space-24px);
+  font-family: "Source Sans Pro", sans-serif;
+
+  &_m {
+    height: var(--space-40px);
+  }
+
+  &_l {
+    height: var(--space-52px);
+  }
 }

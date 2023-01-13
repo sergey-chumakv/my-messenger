@@ -1,51 +1,31 @@
 import React from 'react';
-import {
-  Button as ButtonMUI, ButtonProps as ButtonMUIProps, createTheme, ThemeProvider,
-} from '@mui/material';
+import { Button as ButtonMUI, ButtonProps as ButtonMUIProps } from '@mui/material';
+import classNames from 'classnames';
 
 import styles from './button.module.scss';
+import './button-mui.scss';
 
-const theme = createTheme({
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: '0.5rem',
-          fontSize: '1.125rem',
-          color: '#fff',
-          textTransform: 'none',
-        },
-      },
-    },
-  },
-  palette: {
-    primary: {
-      main: '#639',
-    },
-    info: {
-      main: '#fff',
-    },
-  },
-});
-
-interface ButtonProps extends ButtonMUIProps {
+interface ButtonProps extends Omit<ButtonMUIProps, 'size'> {
   className?: string;
   children: React.ReactNode;
+  size?: 'm' | 'l';
 }
 
-export function Button(props: ButtonProps) {
-  const { className: externalClassName, children } = props;
+export const Button = (props: ButtonProps) => {
+  const {
+    className: externalClassName, children, size = 'l', variant = 'contained', color = 'primary', ...otherProps
+  } = props;
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className={externalClassName}>
-        <ButtonMUI
-          {...props}
-          className={styles.button}
-        >
-          {children}
-        </ButtonMUI>
-      </div>
-    </ThemeProvider>
+    <div className={externalClassName}>
+      <ButtonMUI
+        className={classNames(styles.button, styles[`button_${size}`])}
+        variant={variant}
+        color={color}
+        {...otherProps}
+      >
+        {children}
+      </ButtonMUI>
+    </div>
   );
-}
+};

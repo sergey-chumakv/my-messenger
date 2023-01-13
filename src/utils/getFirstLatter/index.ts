@@ -1,0 +1,1 @@
+export { getFirstLatter } from './getFirstLatter';

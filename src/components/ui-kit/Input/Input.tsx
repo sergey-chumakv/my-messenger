@@ -1,30 +1,41 @@
 import React from 'react';
 import classNames from 'classnames';
 import { TextField, TextFieldProps } from '@mui/material';
-import styles from './input.module.scss';
+
+import './input-mui.scss';
 
 interface InputProps {
     errorMessage?: string;
     className?: string;
+    size?: 'm' | 'l';
+    variant?: 'outlined';
 }
 
-export function Input({ errorMessage, ...props }: InputProps & TextFieldProps) {
+export const Input = (props: InputProps & Omit<TextFieldProps, 'size'>) => {
   const {
-    className: externalClassName, label, value, error,
+    className: externalClassName,
+    errorMessage,
+    label,
+    value,
+    error,
+    size = 'l',
+    variant = 'outlined',
+    ...otherProps
   } = props;
 
-  const [isFocused, setIsFocused] = React.useState(false);
+  const [focused, setFocused] = React.useState(false);
 
   return (
     <div className={externalClassName}>
       <TextField
-        {...props}
-        label={(value || isFocused) ? ((error && errorMessage) || label) : label}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        className={classNames('override input-mui', styles.input)}
-        variant="outlined"
+        {...otherProps}
+        variant={variant}
+        label={(value || focused) ? ((error && errorMessage) || label) : label}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        size={size === 'm' ? 'small' : 'medium'}
+        className={classNames('override input-mui')}
       />
     </div>
   );
-}
+};

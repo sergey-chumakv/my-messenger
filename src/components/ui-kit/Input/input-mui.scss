@@ -1,0 +1,75 @@
+@import "src/styles/vars";
+
+.override.input-mui {
+  width: 100%;
+
+  .MuiInputLabel-root.MuiInputLabel-sizeSmall:not(.Mui-focused) {   // label size small
+    top: 0.125rem;
+  }
+
+  .MuiInputLabel-root:not(.MuiInputLabel-sizeSmall, .Mui-focused) {   // label size medium
+    top: -0.0625rem;
+  }
+
+  .MuiOutlinedInput-root.MuiInputBase-sizeSmall { // height size small
+    height: var(--space-44px);
+  }
+
+  .MuiOutlinedInput-root:not(.MuiInputBase-sizeSmall) { // height size medium
+    height: var(--space-52px);
+  }
+
+  .MuiOutlinedInput-root {
+    width: 100%;
+
+    &.Mui-error {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: var(--color-input-error);
+      }
+    }
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: var(--color-input);
+    border-radius: var(--radius-8px);
+  }
+
+  &:hover {
+    .MuiOutlinedInput-notchedOutline {
+      border-color: var(--color-input-focus);
+    }
+
+    .MuiInputLabel-root {
+      color: var(--color-input-focus);
+    }
+  }
+
+  .MuiInputLabel-root {
+    color: var(--color-input);
+
+    &.Mui-focused {
+      color: var(--color-input-focus);
+    }
+
+    &.Mui-error {
+      color: var(--color-input-error);
+    }
+  }
+
+  input {
+    font-family: "Noto Sans Medium", sans-serif;
+    color: var(--color-text-primary);
+  }
+
+  input:focus ~ .MuiOutlinedInput-notchedOutline {
+    border-color: var(--color-input-focus);
+
+    & ~ label {
+      color: var(--color-input-focus);
+    }
+  }
+
+  .MuiFormHelperText-root.Mui-error {
+    color: var(--color-input-error);
+  }
+}

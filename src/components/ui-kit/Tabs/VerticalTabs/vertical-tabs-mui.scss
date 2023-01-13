@@ -1,0 +1,45 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.MuiTabs-root.MuiTabs-vertical {
+  border-right: none;
+
+  .MuiTabs-indicator {
+    visibility: hidden;
+  }
+
+  .MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: fit-content;
+    min-width: 270px;
+    min-height: var(--space-52px);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: var(--font-size-20px);
+    color: var(--color-text-primary);
+    text-transform: none;
+    border-radius: 0 var(--radius-12px) var(--radius-12px) 0;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--color-button-text-hover);
+    }
+
+    & > svg {
+      align-self: end;
+      margin-right: var(--space-12px);
+      fill: var(--color-tab-icon);
+      transition: none;
+    }
+
+    &.Mui-selected {
+      background: var(--color-tab-vertical);
+
+      & > svg {
+        margin-right: var(--space-12px);
+        fill: var(--color-tab-icon-active);
+      }
+    }
+  }
+}

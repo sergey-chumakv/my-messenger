@@ -1,0 +1,49 @@
+@import "src/styles/vars";
+
+.title {
+  margin-bottom: var(--space-40px);
+  font-size: var(--font-size-24px);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.language-wrapper {
+  display: flex;
+}
+
+.language {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-text-primary);
+
+  &:first-child {
+    margin-right: var(--space-24px);
+  }
+}
+
+.flag {
+  width: 10rem;
+  height: 7.5rem;
+  margin-bottom: var(--space-8px);
+  cursor: pointer;
+  border-radius: var(--radius-8px);
+
+  &.active {
+    box-shadow: 0 0 var(--space-12px) var(--space-8px) rgb(255 255 255 / 50%);
+
+    & ~ .backdrop {
+      visibility: visible;
+    }
+  }
+}
+
+.backdrop {
+  position: absolute;
+  width: 10rem;
+  height: 7.5rem;
+  visibility: hidden;
+  background: radial-gradient(177.33% 130.42% at 50% 50%, rgb(255 255 255 / 0%) 0%, #fff 100%);
+  border-radius: var(--radius-8px);
+}

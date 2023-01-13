@@ -7,31 +7,30 @@
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  background: $background-color;
 }
 
 .form {
-  width: $form-width;
+  width: 22.5rem;
 }
 
 .title {
-  margin-bottom: $rem-size-16px;
-  font-size: $rem-size-36px;
-  color: $white-color;
+  margin-bottom: var(--space-16px);
+  font-size: var(--font-size-36px);
+  color: var(--color-text-primary);
   text-align: center;
 }
 
 .subtitle {
-  margin-bottom: $rem-size-24px;
-  font-size: $rem-size-18px;
-  color: $light-gray-color;
+  margin-bottom: var(--space-24px);
+  font-size: var(--font-size-18px);
+  color: var(--color-text-secondary);
   text-align: center;
 }
 
 .input {
-  margin-bottom: $rem-size-12px;
+  margin-bottom: var(--space-12px);
 }
 
 .button {
-  margin-bottom: $rem-size-12px;
+  margin-bottom: var(--space-12px);
 }

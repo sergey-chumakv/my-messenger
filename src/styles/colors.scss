@@ -1,9 +1,73 @@
-$white-color: #fff;
-$light-gray-color: #808080;
-$purple-color: #639;
-$dark-gray-color: #212121;
-$red-color: #f44336;
+:root[data-theme="light"] {
+  --background-color:
+    radial-gradient(29.25% 29.25% at 27.6% 70.75%, rgb(118 224 248 / 20%) 0%, rgb(255 255 255 / 20%) 100%),
+    radial-gradient(19.69% 25.39% at 69.61% 36.87%, #bde1ff 0%, #e1ebee 100%);
 
-$secondary-text-color: #c8c8c8;
+  --color-logo: #ecdafc;
 
-$background-color: #212121;
+  --color-spinner: #ff6e1d;
+
+  --color-icon: #fff;
+  --color-icon-background: radial-gradient(50% 50% at 84.42% 50%, #ff9060 0%, #ff6e1c 100%);
+  --color-icon-background-hover: radial-gradient(50% 50% at 84.42% 50%, #ff9d76 0%, #ff833c 100%);
+
+  --color-action-icon: #9d9c9c;
+  --color-action-icon-hover: #1f1f1f;
+
+  --color-tab-icon: #9d9c9c;
+  --color-tab-icon-active: #1f1f1f;
+  --color-tab-vertical: radial-gradient(50% 50% at 84.42% 50%, #ff9060 0%, #ff6e1c 100%);
+
+  --color-avatar-background: #ffb18c;
+
+  --color-text-primary: #1f1f1f;
+  --color-text-secondary: #808080;
+  --color-text-link: #4a74c8;
+
+  --color-button-primary: #ff6e1d;
+  --color-button-primary-hover: rgb(204 87 21);
+  --color-button-text-hover: rgb(255 110 29 / 8%);
+
+  --color-input: #5e5e5e;
+  --color-input-focus: #ffa500;
+  --color-input-error: #f44336;
+
+  --color-modal-background: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --background-color:
+    radial-gradient(29.25% 29.25% at 27.6% 70.75%, rgb(75 75 75 / 20%) 0%, rgb(0 0 0 / 15%) 100%),
+    radial-gradient(19.69% 25.39% at 69.61% 36.87%, rgb(47 47 47 / 91%) 0%, #212121 100%);
+
+  --color-logo: #fff;
+
+  --color-spinner: #639;
+
+  --color-icon: #fff;
+  --color-icon-background: radial-gradient(50% 50% at 84.42% 50%, #8e63b9 0%, #639 100%);
+  --color-icon-background-hover: radial-gradient(59.72% 65.28% at 59.72% 34.72%, #a98ac8 0%, #7747af 100%);
+
+  --color-action-icon: #545453;
+  --color-action-icon-hover: #fff;
+
+  --color-tab-icon: #b7b7b7;
+  --color-tab-icon-active: #fff;
+  --color-tab-vertical: radial-gradient(50% 50% at 84.42% 50%, #8e63b9 0%, #639 100%);
+
+  --color-avatar-background: #9575cd;
+
+  --color-text-primary: #fff;
+  --color-text-secondary: #808080;
+  --color-text-link: #4a74c8;
+
+  --color-button-primary: #639;
+  --color-button-primary-hover: rgb(71 35 107);
+  --color-button-text-hover: rgb(255 255 255 / 4%);
+
+  --color-input: #808080;
+  --color-input-focus: #7e48b4;
+  --color-input-error: #f44336;
+
+  --color-modal-background: #181818;
+}

@@ -15,34 +15,34 @@ export const INITIAL_VALUES: ISignUpForm = {
 export const VALIDATION_SCHEMA = yup.object({
   email: yup
     .string()
-    .email('Must be a valid email')
-    .required('Email is required'),
+    .email('validation.email.email')
+    .required('validation.email.required'),
   login: yup
     .string()
-    .matches(/^\b[a-zA-Z][\w-]*\b$/, 'Must start with a letter, only Latin and numbers')
-    .min(3, 'Login should be of minimum 3 characters length')
-    .max(20, 'Login should be of maximum 20 characters length')
-    .required('Login is required'),
+    .matches(/^\b[a-zA-Z][\w-]*\b$/, 'validation.login.matches')
+    .min(3, 'validation.login.minLength')
+    .max(20, 'validation.login.maxLength')
+    .required('validation.login.required'),
   first_name: yup
     .string()
-    .matches(/^([A-Za-z]([A-Za-z]+-?)+|[А-Яа-я]([А-Яа-я]+-?)+)$/, 'Must be in Latin or Cyrillic')
-    .required('Name is required'),
+    .matches(/^([A-Za-z]([A-Za-z]+-?)+|[А-Яа-я]([А-Яа-я]+-?)+)$/, 'validation.name.matches')
+    .required('validation.name.required'),
   second_name: yup
     .string()
-    .matches(/^([A-Za-z]([A-Za-z]+-?)+|[А-Яа-я]([А-Яа-я]+-?)+)$/, 'Must be in Latin or Cyrillic')
-    .required('Last name is required'),
+    .matches(/^([A-Za-z]([A-Za-z]+-?)+|[А-Яа-я]([А-Яа-я]+-?)+)$/, 'validation.lastName.matches')
+    .required('validation.lastName.required'),
   phone: yup
     .string()
-    .matches(/^\+?[0-9]{10,15}$/, 'Must be a valid phone')
-    .required('Phone is required'),
+    .matches(/^\+?[0-9]{10,15}$/, 'validation.phone.matches')
+    .required('validation.phone.required'),
   password: yup
     .string()
-    .min(8, 'Password should be of minimum 8 characters length')
-    .max(40, 'Password should be of maximum 40 characters length')
-    .matches(/^\b(?=.*[A-ZА-Я])(?=.*\d).+\b$/, 'Must contain a capital letter and a number')
-    .required('Password is required'),
+    .min(8, 'validation.password.minLength')
+    .max(40, 'validation.password.maxLength')
+    .matches(/^\b(?=.*[A-ZА-Я])(?=.*\d).+\b$/, 'validation.password.matches')
+    .required('validation.password.required'),
   repeatPassword: yup
     .string()
-    .equals([yup.ref('password')], 'Must match password')
-    .required('Password is required'),
+    .equals([yup.ref('password')], 'validation.repeatPassword.equals')
+    .required('validation.repeatPassword.required'),
 });

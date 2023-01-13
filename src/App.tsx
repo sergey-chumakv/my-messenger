@@ -11,10 +11,12 @@ import { FullScreenSpinner } from './components/FullScreenSpinner';
 const Login = React.lazy(() => import('./pages/Login'));
 const Registration = React.lazy(() => import('./pages/Registration'));
 const ChatPage = React.lazy(() => import('./pages/ChatPage'));
-const Profile = React.lazy(() => import('./pages/Profile'));
+const Setting = React.lazy(() => import('./pages/Setting'));
 
 const App = observer(() => {
-  authStore.authenticate();
+  React.useEffect(() => {
+    authStore.authenticate();
+  }, []);
 
   return (
     <div className={styles.app}>
@@ -29,7 +31,7 @@ const App = observer(() => {
                 element={(
                   <RouteGuard canActivate={!authStore.isAuth} redirect="/chat">
                     <React.Suspense fallback={<FullScreenSpinner />}>
-                      <Login auth={authStore} />
+                      <Login />
                     </React.Suspense>
                   </RouteGuard>
               )}
@@ -55,11 +57,11 @@ const App = observer(() => {
               )}
               />
               <Route
-                path="/profile"
+                path="/setting"
                 element={(
                   <RouteGuard canActivate={authStore.isAuth} redirect="/login">
                     <React.Suspense fallback={<FullScreenSpinner />}>
-                      <Profile />
+                      <Setting />
                     </React.Suspense>
                   </RouteGuard>
                 )}

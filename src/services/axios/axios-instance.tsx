@@ -1,9 +1,10 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { toast } from 'react-toastify';
 import { IErrorResponse } from '../../api/types';
+import { BASE_URL } from '../constants';
 
 const config: AxiosRequestConfig = {
-  baseURL: 'https://ya-praktikum.tech/api/v2',
+  baseURL: BASE_URL,
   timeout: 60000,
   withCredentials: true,
 };

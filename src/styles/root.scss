@@ -1,16 +1,18 @@
-@import "./override-mui";
 @import "./colors";
+@import "./fonts";
 
 html,
 body,
 #root {
   width: 100%;
   height: 100%;
-  background: $background-color;
+  background: var(--background-color);
 }
 
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
+
